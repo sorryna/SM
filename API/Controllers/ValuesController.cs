@@ -10,36 +10,45 @@ namespace API.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
-        // GET api/values
-        [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        [HttpGet("{dd}")]
+        public int[] Get(int dd)
         {
-            return new string[] { "value1", "value2" };
-        }
-
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/values
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
-
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            int[] a = new int[0];
+            if (dd % 2 == 1)
+            {
+                var x = dd / 2;
+                a = new int[2];
+                a[0] = x;
+                a[1] = x + 1;
+            }
+            else if (dd % 3 == 0)
+            {
+                var x = dd / 3;
+                a = new int[3];
+                a[0] = x - 1;
+                a[1] = x;
+                a[2] = x + 1;
+            }
+            else if (dd % 4 == 2)
+            {
+                var x = dd / 4;
+                a = new int[4];
+                a[0] = x - 1;
+                a[1] = x;
+                a[2] = x + 1;
+                a[3] = x + 2;
+            }
+            else if (dd % 5 == 0)
+            {
+                var x = dd / 4;
+                a = new int[5];
+                a[0] = x - 2;
+                a[1] = x - 1;
+                a[2] = x;
+                a[3] = x + 1;
+                a[4] = x + 2;
+            }
+            return a;
         }
     }
 }
