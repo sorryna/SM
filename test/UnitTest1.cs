@@ -15,8 +15,8 @@ namespace test
 
         [Theory]
         [InlineData(1967, new int[] { 1, 1, 4, 1, 0, 1, 1, 1, 0 })]
-        [InlineData(3748, new int[] {3, 1, 2, 0, 2, 0, 1, 1, 1})]
-        public void TestAddMethod(int a, int[] expected)
+        [InlineData(3748, new int[] { 3, 1, 2, 0, 2, 0, 1, 1, 1 })]
+        public void TestChangeMethod(int a, int[] expected)
         {
             var cal = new change.Program();
             var r = cal.exchange(a);
@@ -24,24 +24,16 @@ namespace test
             Assert.Equal(expected, r);
         }
 
-        // [Theory]
-        // [InlineData(1, 2, 3)]
-        // [InlineData(3, 2, 5)]
-        // [InlineData(3, 4, 7)]
-        // public void TestAddMethod(int a, int b, int expected)
-        // {
-        //     var cal = new Calculator();
-        //     var r = cal.Add(a, b);
+        [Theory]
+        [InlineData(51, new int[] { 25, 26 })]
+        [InlineData(50, new int[] { 11, 12, 13, 14 })]
+        [InlineData(48, new int[] { 15, 16, 17 })]
+        public void TestWhatMethod(int a, int[] expected)
+        {
+            var cal = new change.Program();
+            var r = cal.what(a);
 
-        //     Assert.Equal(expected, r);
-        // }
-        // [Fact]
-        // public void TestAddZero()
-        // {
-        //     var cal = new Calculator();
-        //     var r = cal.Add(0, 0);
-
-        //     Assert.Equal(-1, r);
-        // }
+            Assert.Equal(expected, r);
+        }
     }
 }
