@@ -21,63 +21,37 @@ namespace change
                 }
             }
             return t;
+        }
 
-            // if (input >= 1000)
-            // {
-            //     t = input / 1000;
-            //     Console.WriteLine("Banknotes 1000 :" + t);
-            //     input = input % 1000;
-            // }
-            // if (input >= 500)
-            // {
-            //     t = input / 500;
-            //     Console.WriteLine("Banknotes 500 :" + t);
-            //     input = input % 500;
-            // }
-            // if (input >= 100)
-            // {
-            //     t = input / 100;
-            //     Console.WriteLine("Banknotes 100 :" + t);
-            //     input = input % 100;
-            // }
-            // if (input >= 50)
-            // {
-            //     t = input / 50;
-            //     Console.WriteLine("Banknotes 50 :" + t);
-            //     input = input % 50;
-            // }
-            // if (input >= 20)
-            // {
-            //     t = input / 20;
-            //     Console.WriteLine("Banknotes 20 :" + t);
-            //     input = input % 20;
-            // }
-            // if (input >= 10)
-            // {
-            //     t = input / 10;
-            //     Console.WriteLine("Banknotes 10 :" + t);
-            //     input = input % 10;
-            // }
-            // if (input >= 5)
-            // {
-            //     t = input / 5;
-            //     Console.WriteLine("Banknotes 5 :" + t);
-            //     input = input % 5;
-            // }
-            // if (input >= 2)
-            // {
-            //     t = input / 2;
-            //     Console.WriteLine("Banknotes 2 :" + t);
-            //     input = input % 2;
-            // }
-            // if (input >= 1)
-            // {
-            //     t = input / 1;
-            //     Console.WriteLine("Banknotes 1 :" + t);
-            //     input = input % 1;
-            // }
+        public int[] what(int dd)
+        {
+            int[] a = new int[5];
+            if (dd % 2 == 1)
+            {
+                var x = dd / 2;
+                a[0] = x;
+                a[1] = x + 1;
+            }
+            else if (dd % 3 == 0)
+            {
+                var x = dd / 3;
+                a[0] = x - 1;
+                a[1] = x;
+                a[2] = x + 1;
+            }
+            else if (dd % 4 == 2)
+            {
+                var x = dd / 4;
+                a[0] = x - 1;
+                a[1] = x;
+                a[3] = x + 1;
+                a[4] = x + 2;
+            }
+            else if (dd % 5 == 0)
+            {
 
-            // return t;
+            }
+            return a;
         }
 
         static void Main(string[] args)
