@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+        Consecutive numbers
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+
+    <ion-item>
+      <ion-label color="primary" floating>Input Number</ion-label>
+      <ion-input type="text" [(ngModel)]="inputnumber"></ion-input>
+    </ion-item>
+   
+  </ion-list>
+  <button ion-button full click="consecutive">OK</button>
+  <ion-label >{{inputnumber}}</ion-label>
+</ion-content>
